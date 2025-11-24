@@ -1,0 +1,31 @@
+<div class="tbox">
+    <table>
+      <thead>
+        <tr>
+          <th>Customer ID</th>
+          <th>Name</th>
+          <th>Mobile No.</th>
+          <th>Email</th>
+          <th>Aadhaar</th>
+          <th>City</th>
+          <th>Address</th>
+          <th>Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+       @for(cust of customers;track $index){
+         <tr>
+            <td>{{$index+1}}</td>
+            <td>{{cust.name}}</td>
+            <td>{{cust.mobileNo}}</td>
+            <td>{{cust.email}}</td>
+            <td>{{cust.aadharNo}}</td>
+            <td>{{cust.city}}</td>
+            <td>{{cust.address}}</td>
+            <td><button class="dlt-btn" (click)="onDeleteCustomer($index)">Delete</button></td>
+        </tr>
+       }
+      </tbody>
+    </table>
+</div>

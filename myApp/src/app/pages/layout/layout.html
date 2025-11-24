@@ -1,0 +1,20 @@
+<div>
+    <nav class="navbar">
+        <div class="logo">🏨 HotelEase</div>
+        <div class="nav-links">
+            <a routerLink="dashboard" routerLinkActive="active">Home</a>
+            <a routerLink="new-booking" routerLinkActive="active">New-Booking</a>
+            <a routerLink="booking" routerLinkActive="active">Booking</a>
+            <a routerLink="rooms" routerLinkActive="active">Rooms</a>
+            <!-- <a routerLink="booking-calender" routerLinkActive="active">Booking-Calender</a> -->
+            <a routerLink="customer" routerLinkActive="active">Customer</a>
+            <a routerLink="user" routerLinkActive="active">User</a>
+        </div>
+        <div class="user-section">
+            <h3>{{user.phone}}</h3>
+            <button class="logout-btn" (click)="onLogOff()">Log Off</button>
+        </div>
+    </nav>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,70 @@
+<div class="booking-form-wrapper">
+  <h2 class="form-heading">🛎️ Create a New Booking</h2>
+
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
+    <div class="form-grid">
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input id="name" type="text" formControlName="name" placeholder="Enter full name" />
+      </div>
+
+      <!-- Mobile -->
+      <div class="form-group">
+        <label for="mobileNo">Mobile Number</label>
+        <input id="mobileNo" type="text" formControlName="mobileNo" placeholder="Enter mobile number" />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="Enter email address" />
+      </div>
+
+      <!-- Aadhar -->
+      <div class="form-group">
+        <label for="aadharNo">Aadhar Number</label>
+        <input id="aadharNo" type="text" formControlName="aadharNo" placeholder="Enter Aadhar number" />
+      </div>
+
+      <!-- City -->
+      <div class="form-group">
+        <label for="city">City</label>
+        <input id="city" type="text" formControlName="city" placeholder="Enter city" />
+      </div>
+
+      <!-- Address -->
+      <div class="form-group full-width">
+        <label for="address">Address</label>
+        <textarea id="address" formControlName="address" placeholder="Enter address"></textarea>
+      </div>
+
+      <!-- Dates -->
+      <div class="form-group">
+        <label for="fromDate">Booking From</label>
+        <input id="fromDate" type="date" formControlName="bookingFromDate" />
+      </div>
+
+      <div class="form-group">
+        <label for="toDate">Booking To</label>
+        <input id="toDate" type="date" formControlName="bookingToDate" />
+      </div>
+
+      <!-- Rate -->
+      <div class="form-group">
+        <label for="rate">Booking Rate (₹)</label>
+        <input id="rate" type="number" formControlName="bookingRate" placeholder="Enter rate" />
+      </div>
+
+      <!-- Narration -->
+      <div class="form-group full-width">
+        <label for="naration">Narration</label>
+        <textarea id="naration" formControlName="naration" placeholder="Add booking notes..."></textarea>
+      </div>
+    </div>
+
+    <button class="submit-btn" type="submit" [disabled]="bookingForm.invalid">
+      🚀 Submit Booking
+    </button>
+  </form>
+</div>

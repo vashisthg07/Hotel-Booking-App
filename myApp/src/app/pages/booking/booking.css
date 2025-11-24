@@ -1,0 +1,111 @@
+.booking-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  background: rgb(66, 210, 220);
+}
+
+.booking-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #ff7b00;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.booking-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.date-box {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #ff7b00, #ff9900);
+  color: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-bottom: 3px solid #000;
+}
+
+.date .label {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.date .value {
+  margin-left: 5px;
+}
+
+.card-content {
+  padding: 1rem 1.5rem;
+  color: #222;
+}
+
+.passenger {
+  color: #ff7b00;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+p strong {
+  color: #000;
+}
+
+.narration {
+  margin-top: 0.8rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* Sky-blue rate box at bottom */
+.rate-box {
+  background: #66cfff;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  border-radius: 0 0 15px 15px;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+
+.rate-box:hover {
+  background: #4dc1f5;
+  cursor: pointer;
+}
+
+/* Fade animation */
+.booking-card {
+  animation: fadeIn 0.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .date-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

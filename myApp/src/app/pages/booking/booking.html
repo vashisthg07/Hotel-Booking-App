@@ -1,0 +1,29 @@
+<div class="booking-container">
+  @for (book of allBookings; track $index) {
+    <div class="booking-card">
+      <div class="date-box">
+        <div class="date">
+          <span class="label">From:</span>
+          <span class="value">{{ book.bookingFromDate | date: 'mediumDate' }}</span>
+        </div>
+        <div class="date">
+          <span class="label">To:</span>
+          <span class="value">{{ book.bookingToDate | date: 'mediumDate' }}</span>
+        </div>
+      </div>
+
+      <div class="card-content">
+        <h3 class="passenger">{{ book.passengerName }}</h3>
+        <p><strong>Booking ID:</strong> {{ book.bookingId }}</p>
+        <p><strong>Name:</strong> {{ book.name }}</p>
+        <p><strong>Mobile:</strong> {{ book.mobileNo }}</p>
+        <p><strong>Booked By:</strong> {{ book.userName }}</p>
+        <p class="narration">{{ book.naration }}</p>
+      </div>
+
+      <div class="rate-box">
+        ₹{{ book.bookingRate }}
+      </div>
+    </div>
+  }
+</div>

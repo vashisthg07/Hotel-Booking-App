@@ -1,0 +1,69 @@
+<h2 class="todo">📝 All Users of Hotel</h2>
+<div class="main">
+  <!-- Employee List -->
+  <div class="emp-list">
+    <h1 class="heading">Users List</h1>
+    <table>
+      <thead>
+        <th>User Id</th>
+        <th>User Name</th>
+        <th>Password</th>
+        <th>Role</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        @for (user of users; track $index) {
+        <tr>
+          <td>{{user.userId}}</td>
+          <td>{{user.userName}}</td>
+          <td>{{user.password}}</td>
+          <td>{{user.role}}</td>
+          <td class="finalTd">
+            <button class="update" (click)="onUpdate(user)">Update✏️</button>
+            <button class="delete" (click)="onDelete($index)">Delete🗑️</button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <!-- User Form -->
+  <div class="emp-form">
+    <h1 class="heading">{{ editIndex !== null ? 'Edit User' : 'New User' }}</h1>
+
+    <form #userForm="ngForm" (ngSubmit)="onSaveUser(userForm)">
+      <label><span>*</span>User Id</label>
+      <input type="text" name="name" [(ngModel)]="userObj.userId" #nameRef="ngModel" required />
+       @if(nameRef.touched && nameRef.invalid){
+            <p>UserId is required</p>
+        }
+
+      <label><span>*</span>User Name</label>
+      <input type="text" name="emailId" [(ngModel)]="userObj.userName" #emailRef="ngModel" required />
+       @if(emailRef.touched && emailRef.invalid){
+            <p>User Name is required</p>
+        }
+
+      <label><span>*</span>Password</label>
+      <input type="text" name="contact" [(ngModel)]="userObj.password" #contactRef="ngModel" required />
+       @if(contactRef.touched && contactRef.invalid){
+            <p>Password is required</p>
+        }
+
+      <label><span>*</span>Role</label>
+      <input type="text" name="city" [(ngModel)]="userObj.role" #cityRef="ngModel" required />
+       @if(cityRef.touched && cityRef.invalid){
+            <p>Role is required</p>
+        }
+        
+
+      <div class="btn-last">
+        <button type="button" (click)="onReset(userForm)">Reset</button>
+        <button type="submit" [disabled]="userForm.invalid" class="save-emp">
+          {{ editIndex !== null ? 'Update Employee' : 'Save Employee' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

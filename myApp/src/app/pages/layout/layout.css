@@ -1,0 +1,154 @@
+/* .navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: orange;
+    padding: 0px 10px;
+}
+.nav-links{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.nav-links a{
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+    background-color: orangered;
+    border: 2px solid black;
+    padding: 8px;
+
+}
+.right-side{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.right-side button{
+    height: fit-content;
+} */
+ /* General Layout */
+.dashboard-container {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background: linear-gradient(90deg, #ff7e5f, #feb47b); */
+  background-color: orangered;
+  padding: 15px 40px;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
+  border: 2px solid white;
+}
+
+/* User section */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.logout-btn {
+  background: white;
+  color: #ff7e5f;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: #ffd6c1;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Dashboard Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 25px 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  color: #ff7e5f;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 15px;
+  background-color: #fff3e6;
+  color: #444;
+  font-size: 0.9rem;
+  border-top: 1px solid #ffd6c1;
+}
